@@ -1,5 +1,5 @@
 # Description
-This scripts allows for a convinient search of Active Directory objects based on the specified filter.
+This script allows for a convenient search of Active Directory objects based on the specified filter.
 
 # Usage
 ```

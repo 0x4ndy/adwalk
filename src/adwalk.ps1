@@ -25,7 +25,7 @@ if (($domain -ne "") -and ($username -ne ""))
     $password = [Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::SecureStringToBSTR($secpwd))
 }
 
-Write-Host "[+] Searchig for: " + $filter
+Write-Host $("[+] Searching for: " + $filter)
 
 $domainObj = [System.DirectoryServices.ActiveDirectory.Domain]::GetCurrentDomain()
 $pdc = ($domainObj.PdcRoleOwner).Name
@@ -37,7 +37,7 @@ $searchString = "LDAP://" + $pdc + "/" + $distinguishedName
 $searcher = New-Object System.DirectoryServices.DirectorySearcher([ADSI]$searchString)
 if ($user -and $password)
 {
-    Write-Host "[+] Searching with credentials for " + $user
+    Write-Host $("[+] Searching with credentials for " + $user)
     $objDomain = New-Object System.DirectoryServices.DirectoryEntry($searchString, $user, $password)
 }
 else

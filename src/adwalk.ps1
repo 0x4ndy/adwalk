@@ -50,7 +50,7 @@ $searcher.SearchRoot = $objDomain
 $searcher.Filter = $filter
 $searchResults = $searcher.FindAll()
 
-Write-Host "[+] Search resounts:" 
+Write-Host "[+] Search results:" 
 Write-Host "------------------" 
 
 Foreach($item in $searchResults)
